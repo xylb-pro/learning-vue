@@ -1,13 +1,20 @@
 <template>
-  <div class="todo-list">
-    <TodoItem
-      @delete-todo="$emit('delete-todo', todo.id)"
-      @change-checked="changeChecked"
-      v-for="(todo, index) in todos"
-      :key="todo.id"
-      :todo="todo"
-      :index="index + 1"
-    />
+  <div>
+    <div class="todo-list">
+      <div v-if="todos[0]">
+        <TodoItem
+          @delete-todo="$emit('delete-todo', todo.id)"
+          @change-checked="changeChecked"
+          v-for="(todo, index) in todos"
+          :key="todo.id"
+          :todo="todo"
+          :index="index + 1"
+        />
+      </div>
+      <div v-else>
+        There is nothing here yet
+      </div>
+    </div>
   </div>
 </template>
 
