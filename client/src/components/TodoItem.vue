@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     getDate(timeStamp) {
-      console.log('q');
       const humanFormatDate = new Date(+timeStamp);
       const year = humanFormatDate.getFullYear();
       const month = humanFormatDate.getMonth() + 1;
